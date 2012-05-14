@@ -6,7 +6,7 @@ use namespace::autoclean;
 
 use Carp qw( croak );
 
-our $VERSION = 0.01;
+our $VERSION = '0.02'; # VERSION
 
 
 has 'title' => (
@@ -97,8 +97,8 @@ sub new_from_data {
         url                     => $data->{uu},
         external_links          => $data->{ueid},
         links                   => $data->{uid},
-        mozrank_raw             => $data->{umrp},
-        mozrank                 => $data->{umrr},
+        mozrank_raw             => $data->{umrr},
+        mozrank                 => $data->{umrp},
         subdomain_mozrank       => $data->{fmrp},
         subdomain_mozrank_raw   => $data->{fmrr},
         http_status_code        => $data->{us},
@@ -119,7 +119,7 @@ WWW::SEOmoz::URLMetrics - Class to represent the URL metrics returned from the S
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 DESCRIPTION
 

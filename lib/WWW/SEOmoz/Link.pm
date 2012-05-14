@@ -6,7 +6,7 @@ use namespace::autoclean;
 
 use Carp qw( croak );
 
-our $VERSION = 0.01;
+our $VERSION = '0.02'; # VERSION
 
 
 has 'target_url' => (
@@ -71,7 +71,7 @@ WWW::SEOmoz::Link - Class to represent a link returned from the SEOmoz API.
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 DESCRIPTION
 

@@ -8,7 +8,7 @@ use Carp qw( croak );
 
 use WWW::SEOmoz::Link;
 
-our $VERSION = 0.01;
+our $VERSION = '0.02'; # VERSION
 
 
 has 'links' => (
@@ -52,7 +52,7 @@ WWW::SEOmoz::Links - Class to represent the links returned from the SEOmoz API
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 DESCRIPTION
 

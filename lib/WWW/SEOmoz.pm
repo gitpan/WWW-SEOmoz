@@ -15,7 +15,7 @@ use Digest::SHA qw( hmac_sha1_base64 );
 use WWW::SEOmoz::URLMetrics;
 use WWW::SEOmoz::Links;
 
-our $VERSION = 0.01;
+our $VERSION = '0.02'; # VERSION
 
 has access_id => (
     is       => 'ro',
@@ -140,7 +140,7 @@ WWW::SEOmoz - Perl wrapper for the SEOmoz API
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

@@ -4,36 +4,39 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Perl wrapper for the SEOmoz API',
-  'AUTHOR' => 'Adam Taylor <ajct@cpan.org>',
-  'BUILD_REQUIRES' => {
-    'Test::More' => '0'
+  "ABSTRACT" => "Perl wrapper for the SEOmoz API",
+  "AUTHOR" => "Adam Taylor <ajct\@cpan.org>",
+  "BUILD_REQUIRES" => {
+    "English" => 0,
+    "Test::More" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'WWW-SEOmoz',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'WWW::SEOmoz',
-  'PREREQ_PM' => {
-    'Carp' => '0',
-    'DateTime' => '0',
-    'Digest::SHA' => '0',
-    'JSON' => '0',
-    'LWP::UserAgent' => '0',
-    'Moose' => '0',
-    'URI::Escape' => '0',
-    'namespace::autoclean' => '0'
+  "DISTNAME" => "WWW-SEOmoz",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "WWW::SEOmoz",
+  "PREREQ_PM" => {
+    "Carp" => 0,
+    "DateTime" => 0,
+    "Digest::SHA" => 0,
+    "JSON" => 0,
+    "LWP::UserAgent" => 0,
+    "Moose" => 0,
+    "URI::Escape" => 0,
+    "namespace::autoclean" => 0
   },
-  'VERSION' => '0.01',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.02",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
