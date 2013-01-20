@@ -15,7 +15,7 @@ use Digest::SHA qw( hmac_sha1_base64 );
 use WWW::SEOmoz::URLMetrics;
 use WWW::SEOmoz::Links;
 
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 has access_id => (
     is       => 'ro',
@@ -48,7 +48,9 @@ my $API_BASE = 'http://lsapi.seomoz.com/';
 sub _build_ua {
     my $self = shift;
 
-    return LWP::UserAgent->new;
+    my $ua = LWP::UserAgent->new;
+    $ua->env_proxy;
+    return $ua;
 }
 
 sub _build_api_url {
@@ -90,6 +92,7 @@ sub _make_api_call {
 }
 
 
+# XXX should allow people to request the metrics they want
 sub url_metrics {
     my $self = shift;
     my $url  = shift || croak 'URL required';
@@ -97,7 +100,8 @@ sub url_metrics {
     my $api_url = $self->api_url
         . 'url-metrics/'
         . uri_escape($url)
-        . $self->_generate_authentication;
+        . $self->_generate_authentication
+        . "&Cols=133712314365"; # MAGIC - see the API docs (http://apiwiki.seomoz.org/url-metrics)
 
     my $url_metrics = WWW::SEOmoz::URLMetrics->new_from_data(
         $self->_make_api_call( $api_url )
@@ -140,7 +144,7 @@ WWW::SEOmoz - Perl wrapper for the SEOmoz API
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

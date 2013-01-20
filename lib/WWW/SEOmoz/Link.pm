@@ -6,41 +6,36 @@ use namespace::autoclean;
 
 use Carp qw( croak );
 
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 
 has 'target_url' => (
-    isa         => 'Str',
+    isa         => 'Str|Undef',
     is          => 'ro',
-    required    => 1,
 );
 
 
 has 'source_url' => (
-    isa         => 'Str',
+    isa         => 'Str|Undef',
     is          => 'ro',
-    required    => 1,
 );
 
 
 has 'link_id' => (
-    isa         => 'Int',
+    isa         => 'Int|Undef',
     is          => 'ro',
-    required    => 1,
 );
 
 
 has 'source_url_id' => (
-    isa         => 'Int',
+    isa         => 'Int|Undef',
     is          => 'ro',
-    required    => 1,
 );
 
 
 has 'target_url_id' => (
-    isa         => 'Int',
+    isa         => 'Int|Undef',
     is          => 'ro',
-    required    => 1,
 );
 
 __PACKAGE__->meta->make_immutable;
@@ -71,7 +66,7 @@ WWW::SEOmoz::Link - Class to represent a link returned from the SEOmoz API.
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 DESCRIPTION
 
